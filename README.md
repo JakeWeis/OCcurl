@@ -16,5 +16,5 @@ To get full access to the database, login credentials need to be provided. The b
 1. Adjust parameters startdate and enddate (time frame of interest), sensortype, datatype and filename (filename or pattern). Refer to https://oceancolor.gsfc.nasa.gov/forum/oceancolor/topic_show.pl?tid=3081 for parameter options.
 2. Save script.
 3. Files will be downloaded into the current working directory. To specify the download folder change the current directory (`cd <download directory>`)
-4. Drag curlscript.sh into the Terminal and execute. In case of "Permission denied" error, the shell script needs to be made executable first: chmod +x OCCURL.sh
+4. Drag curlscript.sh into the Terminal and execute. In case of "Permission denied" error, the shell script needs to be made executable first: chmod +x OCcurl.sh
 5. Script will start downloading. I added a counter of files downloaded, total number of files, elapsed time and estimated time left (based on the number files left and the time the previous file took to download).
