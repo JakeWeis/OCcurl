@@ -1,5 +1,4 @@
-# README - OCCURL.sh
-## Jake Weis, April 2020
+OCCURL.sh (Jake Weis, April 2020)
 
 Downloading NASA OceanColor Data in bulk through a shell script (data access viacurl). This script will search the entire database for files based on the specified search parameters. Instructions found here: https://oceancolor.gsfc.nasa.gov/forum/oceancolor/topic_show.pl?tid=3081
 
