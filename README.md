@@ -1,7 +1,7 @@
 ## OCCURL.sh 
 Jake Weis, April 2020
 
-Downloading NASA OceanColor Data in bulk through a shell script (data access via curl). This script will search the entire NASA OceanColor database for files based on the specified search parameters. Instructions can be found here: https://oceancolor.gsfc.nasa.gov/forum/oceancolor/topic_show.pl?tid=3081
+Download NASA OceanColor Data in bulk using a shell script (data access via curl). This script will search the entire NASA OceanColor database for files based on the specified search parameters. Instructions can be found here: https://oceancolor.gsfc.nasa.gov/forum/oceancolor/topic_show.pl?tid=3081
 
 ### Before using the script (only once):
 To get full access to the database, login credentials need to be provided. The best way to do this is to create a login file (.netrc) and a cookie file (.urs_cookies), by executing the following lines in the Mac Terminal (replace `<uid>` and `<password>` with your Ocean Color website user-ID and password):
