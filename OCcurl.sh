@@ -1,5 +1,5 @@
 clear
-startdate=$"2002-01-01";
+startdate=$"1997-01-01";
 enddate=$"2020-06-30";
 sensortype=$"aqua";
 datatype=$"L3m";
@@ -17,7 +17,7 @@ do
   curl -b ~/.urs_cookies -c ~/.urs_cookies -L -n --retry 10 -O $file;
   tii=$(date '+%s')
   clear
-  echo "$i/$nfiles files downloaded" 
+  echo "$i/$nfiles files downloaded"
   echo "Time elapsed: $(($tii - $t0)) seconds"
   echo "Estimated time remaining: $((($tii - $ti) * ($nfiles - $i))) seconds"
 done;
