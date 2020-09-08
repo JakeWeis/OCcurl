@@ -1,16 +1,22 @@
-clear
-startdate=$"1997-01-01";
-enddate=$"2020-06-30";
+# INPUT PARAMETERS
+outputfolder=$"/Volumes/jweis/DATA/NC/SAT/ModisAqua_MO_9km/CHLA";
+startdate=$"2019-12-01";
+enddate=$"2020-01-01";
 sensortype=$"aqua";
 datatype=$"L3m";
-filename=$"*L3m_8D_IOP_bbp_443_giop_4km.nc"
+tempres=$"MO"             # DAY: daily, 8D: 8-day, MO:monthly
+spatres=$"9km";           # 9km/4km
+product=$"chlor";          # chlor/nflh/aph/bbp/poc/ipar
 
+# EXECUTE
+filename=$"*"$tempres$"*"$product$"*"$spatres$".nc";
+cd $outputfolder
 (curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=$datatype&addurl=1&results_as_file=1&search=$filename" https://oceandata.sci.gsfc.nasa.gov/api/file_search |grep getfile) > filelist.txt
 nfiles=$(wc -l < filelist.txt)
 i=0
 t0=$(date '+%s')
 
-for file in $(curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=$datatype&addurl=1&results_as_file=1&search=$filename" https://oceandata.sci.gsfc.nasa.gov/api/file_search |grep getfile);
+for file in $(curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=$datatype&addurl=1&results_as_file=1&search=$filename" https://oceandata.sci.gsfc.nasa.gov/api/file_search |grep getfile)
 do
   ti=$(date '+%s')
   ((i++))
