@@ -4,15 +4,14 @@
 clear
 
 # Create login credential files (only if not available yet)
-BASEDIR=$(dirname "$0")
-if ! [ -f "$BASEDIR/.urs_cookies" ]; then
+if ! [ -f ~/.urs_cookies ]; then
   echo "EarthData Login credentials:"
   read -p "Username: " uid
   read -s -p "Password: " pwrd
-  touch "$BASEDIR/.netrc"
-  echo "machine urs.earthdata.nasa.gov login $uid password $pwrd" > "$BASEDIR/.netrc"
-  chmod 0600 "$BASEDIR/.netrc"
-  touch "$BASEDIR/.urs_cookies"
+  touch ~/.netrc
+  echo "machine urs.earthdata.nasa.gov login $uid password $pwrd" > ~/.netrc
+  chmod 0600 ~/.netrc
+  touch ~/.urs_cookies
   clear
 fi
 
@@ -43,7 +42,7 @@ for file in $(curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=
 do
   ti=$(date '+%s')
   ((i++))
-  curl -b "$BASEDIR/.urs_cookies" -c "$BASEDIR/.urs_cookies" -L -n --retry 10 -O $file;
+  curl -b ~/.urs_cookies -c ~/.urs_cookies -L -n --retry 10 -O $file;
   tii=$(date '+%s')
   clear
   echo "==========================================="
