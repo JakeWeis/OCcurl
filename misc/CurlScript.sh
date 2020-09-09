@@ -1,30 +1,27 @@
 ## =======================================================
-## INPUT PARAMETERS
-## =======================================================
-# Output directory
-outputfolder=$"/Volumes/jweis/DATA/NC/SAT/ModisAqua_MO_9km/BBP";
-# Start/end date
-startdate=$"2019-12-01";
-enddate=$"2020-01-01";
-# Temporal resolution - DAY/8D/MO
-tempres=$"MO";
-# Spatial resolution - 9km/4km
-spatres=$"9km";
-# Satellite product - chlor/nflh/aph/bbp/poc/ipar
-product=$"chlor";
-# Sensor type
-sensortype=$"aqua";
-# Data type
-datatype=$"L3m";
-
-## =======================================================
-## EXECUTE
+## CurlScript.sh
 ## =======================================================
 clear
+
+# Create login credential files (only if not available yet)
+BASEDIR=$(dirname "$0")
+if ! [ -f "$BASEDIR/.urs_cookies" ]; then
+  echo "EarthData Login credentials:"
+  read -p "Username: " uid
+  read -s -p "Password: " pwrd
+  touch "$BASEDIR/.netrc"
+  echo "machine urs.earthdata.nasa.gov login $uid password $pwrd" > "$BASEDIR/.netrc"
+  chmod 0600 "$BASEDIR/.netrc"
+  touch "$BASEDIR/.urs_cookies"
+  clear
+fi
+
 # Create output directory if it does not exist
-if ! [ -d $outputfolder]; then
+if ! [ -d $outputfolder ]; then
   mkdir $outputfolder
 fi
+
+# Find all files
 filename=$"*"$tempres$"*"$product$"*"$spatres$".nc";
 cd $outputfolder
 (curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=$datatype&addurl=1&results_as_file=1&search=$filename" https://oceandata.sci.gsfc.nasa.gov/api/file_search |grep getfile) > filelist.txt
@@ -33,7 +30,7 @@ i=0
 t0=$(date '+%s')
 clear
 echo "==========================================="
-echo "|  0/$nfiles files downloaded"
+echo "|  0/"$nfiles" files downloaded"
 echo "-------------------------------------------"
 echo "|  Elapsed time: 0 seconds"
 echo "|  Estimated time remaining: calculating..."
@@ -46,11 +43,11 @@ for file in $(curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=
 do
   ti=$(date '+%s')
   ((i++))
-  curl -b ~/.urs_cookies -c ~/.urs_cookies -L -n --retry 10 -O $file;
+  curl -b "$BASEDIR/.urs_cookies" -c "$BASEDIR/.urs_cookies" -L -n --retry 10 -O $file;
   tii=$(date '+%s')
   clear
   echo "==========================================="
-  echo "|  $i/$nfiles files downloaded"
+  echo "|  "$i"/"$nfiles" files downloaded"
   echo "-------------------------------------------"
   echo "|  Time elapsed: $(($tii - $t0)) seconds"
   echo "|  Estimated time remaining: $((($tii - $ti) * ($nfiles - $i))) seconds"
@@ -62,7 +59,7 @@ done;
 
 clear
 echo "==========================================="
-echo "|  $i/$nfiles files downloaded"
+echo "|  "$i"/"$nfiles" files downloaded"
 echo "-------------------------------------------"
 echo "|  Time elapsed: $(($tii - $t0)) seconds"
 echo "|  Estimated time remaining: $((($tii - $ti) * ($nfiles - $i))) seconds"
@@ -71,3 +68,5 @@ echo ""
 echo "Download successful!"
 echo ""
 echo "=========================================="
+
+echo $BASEDIR
