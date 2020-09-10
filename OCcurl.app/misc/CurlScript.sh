@@ -15,13 +15,16 @@ if ! [ -f ~/.urs_cookies ]; then
   clear
 fi
 
-# Create output directory if it does not exist
-if ! [ -d $outputfolder ]; then
-  mkdir $outputfolder
-fi
+# Create output directory
+mkdir -p $outputfolder
 
 # Find all files
-filename=$"*"$tempres$"*"$product$"*"$spatres$".nc";
+if [[ $product="sst" ]] # SST file name requires slightly different search string setup
+then
+filename=$"*"$datatype$"*"$tempres$"*."$product$".s*"$spatres$".nc";
+else
+filename=$"*"$datatype$"*"$tempres$"*"$product$"*"$spatres$".nc";
+fi
 cd $outputfolder
 (curl -d "sensor=$sensortype&sdate=$startdate&edate=$enddate&dtype=$datatype&addurl=1&results_as_file=1&search=$filename" https://oceandata.sci.gsfc.nasa.gov/api/file_search |grep getfile) > filelist.txt
 nfiles=$(wc -l < filelist.txt)
@@ -68,4 +71,5 @@ echo "Download successful!"
 echo ""
 echo "=========================================="
 
+osascript -e 'tell app "System Events" to display dialog "Download complete."'
 exit

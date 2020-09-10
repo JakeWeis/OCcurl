@@ -2,7 +2,7 @@
 ## DOWNLOAD PARAMETERS
 ## =======================================================
 # Specify output folder
-mainfolder="~/Downloads"
+mainfolder=~/Downloads
 # Start/end date
 startdate="2019-10-01";
 enddate="2020-03-01";
@@ -10,15 +10,15 @@ enddate="2020-03-01";
 tempres="MO";
 # Spatial resolution - 9km/4km
 spatres="9km";
-# Satellite product - chlor/nflh/aph/bbp/poc/ipar
-product="ipar";
+# Satellite product - chlor_a/nflh/aph/bbp/poc/ipar
+product="sst";
 # Sensor type
 sensortype="aqua";
 # Data type
 datatype="L3m";
 
 # Generate output subdirectory (automatically from download paramters)
-outputfolder="$mainfolder"/"$sensortype"_"$tempres"_"$spatres"/"$product";
+outputfolder=$mainfolder/"$sensortype"_"$tempres"_"$spatres"/$product;
 
 # Export variables
 export outputfolder
