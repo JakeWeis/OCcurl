@@ -11,7 +11,7 @@ tempres="MO";
 # Spatial resolution - 9km/4km
 spatres="9km";
 # Satellite product - chlor_a/nflh/aph/bbp/poc/ipar
-product="sst";
+product="poc";
 # Sensor type
 sensortype="aqua";
 # Data type

@@ -19,7 +19,7 @@ fi
 mkdir -p $outputfolder
 
 # Find all files
-if [[ $product="sst" ]] # SST file name requires slightly different search string setup
+if [[ $product = "sst" ]] # SST file name requires slightly different search string setup
 then
 filename=$"*"$datatype$"*"$tempres$"*."$product$".s*"$spatres$".nc";
 else
@@ -71,5 +71,5 @@ echo "Download successful!"
 echo ""
 echo "=========================================="
 
+afplay /System/Library/Sounds/Glass.aiff
 osascript -e 'tell app "System Events" to display dialog "Download complete."'
-exit
