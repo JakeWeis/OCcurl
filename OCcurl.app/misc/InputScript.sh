@@ -4,7 +4,7 @@
 # Specify output folder
 mainfolder=~/Downloads
 # Start & end date (YYYY-MM-DD)
-startdate="2019-12-01";
+startdate="2019-12-20";
 enddate="2019-12-31";
 # Temporal resolution (DAY/8D/MO,...)
 tempres="8D";
