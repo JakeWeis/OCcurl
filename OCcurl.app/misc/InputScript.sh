@@ -3,15 +3,15 @@
 ## =======================================================
 # Specify output folder
 mainfolder=~/Downloads
-# Start/end date
-startdate="2019-10-01";
-enddate="2020-03-01";
-# Temporal resolution - DAY/8D/MO
-tempres="MO";
-# Spatial resolution - 9km/4km
-spatres="9km";
-# Satellite product - chlor_a/nflh/aph/bbp/poc/ipar
-product="poc";
+# Start & end date (YYYY-MM-DD)
+startdate="2019-12-01";
+enddate="2019-12-31";
+# Temporal resolution (DAY/8D/MO,...)
+tempres="8D";
+# Spatial resolution (9km/4km)
+spatres="4km";
+# Satellite product (chlor_a/nflh/aph/bbp/poc/ipar/sst/...)
+product="chlor_a";
 # Sensor type
 sensortype="aqua";
 # Data type

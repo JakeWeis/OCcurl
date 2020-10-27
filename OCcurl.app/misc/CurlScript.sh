@@ -72,4 +72,4 @@ echo ""
 echo "=========================================="
 
 afplay /System/Library/Sounds/Glass.aiff
-osascript -e 'tell app "System Events" to display dialog "Download complete."'
+# osascript -e 'tell app "System Events" to display dialog "Download complete."'
