@@ -4,7 +4,7 @@ MacOS app for accessing and bulk downloading data from the *NASA EarthData Ocean
 Instructions
 ---
 1. Open OCcurl
-   - *First time running the app: Right click the app icon and, while holding down option <code>&#8997;</code>, click <code>open</code> (else Mac won't allow it to run). There will be a number of requests asking for control. Accept each request.*
+   - *First time running the app: Right click the app icon and, while holding down option <code>&#8997;</code>, click <code>open</code> (else Mac won't allow it to run). There will be a number of requests asking for permission. Accept each request.*
 2. An input window will open in TextEdit (or any other default text editor). Adjust all download parameters as required and **save** the adjusted file (<code>&#8984;</code>+<code>S</code>). Download parameters explained below.
 3. A confirmation window opened with the input window. After saving the input file click <code>OK</code> to proceed to download, or <code>Cancel</code> to abort.
 4. A Terminal window will open displaying the download progress.
