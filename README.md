@@ -48,7 +48,7 @@ Download parameters
   - <code>viirsj1</code> (VIIRS-JPSS1)
   - <code>s3aolci</code> (Sentinel-3A)
   - <code>s3bolci</code> (Sentinel-3B)
-- **Data type**: <code>L0, L1, L2, L3b (for binned data), L3m (for mapped data)</code>
+- **Data type**
   - <code>L0</code> (Level 0)
   - <code>L1</code> (Level 1)
   - <code>L2</code> (Level 2)
