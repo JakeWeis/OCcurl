@@ -4,7 +4,7 @@ MacOS app for accessing and bulk downloading data from the *NASA EarthData Ocean
 Instructions
 ---
 1. Open OCcurl
-   - *First time running the app: Right click the app icon and, while holding down option <code>&#8997;</code>, <code>open</code> (else Mac won't allow it to run). There will be a number of requests asking for control. Accept each request.*
+   - *First time running the app: Right click the app icon and, while holding down option <code>&#8997;</code>, click <code>open</code> (else Mac won't allow it to run). There will be a number of requests asking for control. Accept each request.*
 2. An input window will open in TextEdit (or any other default text editor). Adjust all download parameters as required and **save** the adjusted file (<code>&#8984;</code>+<code>S</code>). Download parameters explained below.
 3. A confirmation window opened with the input window. After saving the input file click <code>OK</code> to proceed to download, or <code>Cancel</code> to abort.
 4. A Terminal window will open displaying the download progress.
@@ -60,7 +60,8 @@ Change login credentials
 If incorrect login credentials were provided (every downloaded file has the same size of 27 KB), follow these instructions to adjust them:
 1. Right click the Finder icon in the Dock.
 2. <code>Go to folder...</code>
-3. Enter <code>~/</code> and <code>Go</code>
+3. Enter <code>~/</code> and click <code>Go</code>
 4. Press <code>&#8984;</code>+<code>&#8679;</code>+<code>.</code> (show hidden files)
 5. Locate file <code>.netrc</code> and open (should open in a text editor)
-6. Change username or password and save file
+6. Change username or password and save file (<code>&#8984;</code>+<code>S</code>).
+7. Retry downloading. If the correct credentials were entered, the actual files should be downloaded (usually >10 MB in size)
