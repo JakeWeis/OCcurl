@@ -34,7 +34,7 @@ Download parameters
   - <code>9km</code>
 - **Satellite product**
   - *Note: This parameter is used to conduct a string search in the file name. Any character sequence found in the filename can be used here. A list of parameter names can be found here: https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/8-Day/4km/*
-  - Examples: <code>chlor_a, poc, sst,...</code>
+  - Examples: <code>chlor_a</code>, <code>poc</code>, <code>sst</code>,...
 - **Sensor type**
   - <code>aquarius</code>
   - <code>seawifs</code>
