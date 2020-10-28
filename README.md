@@ -27,8 +27,8 @@ Download parameters
   - <code>CU</code> (cumulative)
   - <code>MC</code> (monthly climatology)
   - <code>R32</code> (rolling 32 day average)
-  - <code>SNSP/SNSU/SNAU/SNWI</code> (seasonal spring/summer/autumn/winter)
-  - <code>SCSP/SCSU/SCAU/SCWI</code> (seasonal climatology spring/summer/autumn/winter)
+  - <code>SNSP</code>, <code> SNSU</code>, <code> SNAU</code>, <code>SNWI</code> (seasonal spring/summer/autumn/winter)
+  - <code>SCSP</code>, <code> SCSU</code>, <code> SCAU</code>, <code>SCWI</code> (seasonal climatology spring/summer/autumn/winter)
 - **Spatial resolution** 
   - <code>4km</code>
   - <code>9km</code>
