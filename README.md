@@ -61,7 +61,7 @@ If incorrect login credentials were provided (every downloaded file has the same
 1. Right click the Finder icon in the Dock.
 2. <code>Go to folder...</code>
 3. Enter <code>~/</code> and click <code>Go</code>
-4. Press <code>&#8984;</code>+<code>&#8679;</code>+<code>.</code> (show hidden files)
+4. Press <code>&#8984;</code>+<code>&#8679;</code>+<code>.</code> (show hidden files, same shortcut to hide them again)
 5. Locate file <code>.netrc</code> and open (should open in a text editor)
 6. Change username or password and save file (<code>&#8984;</code>+<code>S</code>).
 7. Retry downloading. If the correct credentials were entered, the actual files should be downloaded (usually >10 MB in size)
